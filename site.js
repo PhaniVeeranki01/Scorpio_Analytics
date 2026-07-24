@@ -19,6 +19,18 @@
     if(action==='save')save({essential:true,analytics:analytics.checked,marketing:marketing.checked});
   });
   [settings,privacy].forEach(function(modal){modal.addEventListener('click',function(e){if(e.target===modal)modal.hidden=true})});
-  var phrases=['Observe → Reason → Act','Data → Insight → Action','Signals → Systems → Scale'];var i=0;var agent=document.querySelector('[data-agent-text]');if(agent)setInterval(function(){i=(i+1)%phrases.length;agent.textContent=phrases[i]},2400);
+  var contractorForm=document.getElementById('contractor-form');
+  var contractorMessage=document.getElementById('contractor-form-message');
+  if(contractorForm)contractorForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    var button=contractorForm.querySelector('button[type="submit"]');
+    var original=button.innerHTML;
+    button.disabled=true;button.textContent='Submitting...';contractorMessage.hidden=true;
+    fetch('https://formsubmit.co/ajax/support@scorpioanalytics.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(contractorForm)})
+      .then(function(response){return response.json().then(function(data){if(!response.ok||data.success===false)throw new Error(data.message||'Submission failed');return data})})
+      .then(function(){contractorForm.reset();contractorMessage.className='form-message form-success field-wide';contractorMessage.textContent='Submitted successfully. Thank you — our team will contact you soon.';contractorMessage.hidden=false})
+      .catch(function(error){contractorMessage.className='form-message form-error field-wide';contractorMessage.textContent=error.message||'We could not submit the form. Please email support@scorpioanalytics.com.';contractorMessage.hidden=false})
+      .finally(function(){button.disabled=false;button.innerHTML=original});
+  });  var phrases=['Observe \u2192 Reason \u2192 Act','Data \u2192 Insight \u2192 Action','Signals \u2192 Systems \u2192 Scale'];var i=0;var agent=document.querySelector('[data-agent-text]');if(agent)setInterval(function(){i=(i+1)%phrases.length;agent.textContent=phrases[i]},2400);
   var reveals=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12});reveals.forEach(function(el){observer.observe(el)})}else{reveals.forEach(function(el){el.classList.add('is-visible')})}
 })();
