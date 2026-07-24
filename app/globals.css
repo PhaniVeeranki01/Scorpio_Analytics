@@ -14,3 +14,9 @@ body{background:var(--paper)}
 .signal-strip{background:linear-gradient(90deg,#0753a7,#0c92e4,#0753a7);border-color:#25bfff;color:#fff}.services{background:#f5f9fc}.section-intro h2 i{color:#087dc7}.service-grid{gap:18px;border:0}.service-card{background:#fff;border:1px solid #d8e5ef;border-radius:8px;box-shadow:0 18px 55px rgba(2,31,57,.07)}.service-card:hover{background:linear-gradient(145deg,#071b34,#0a3158);box-shadow:0 24px 60px rgba(1,37,71,.2);transform:translateY(-4px)}.tags span{color:#087fca;background:#eef8ff}.service-card:hover .tags span{color:#77d7ff;background:rgba(37,170,242,.1)}
 .manifesto{color:#fff;background:radial-gradient(circle at 80% 20%,rgba(41,180,255,.3),transparent 31%),linear-gradient(130deg,#041427,#082b50 70%,#06447a)}.manifesto h2{color:#4ccaff;text-shadow:0 0 40px rgba(42,189,255,.22)}.approach{background:#e8f3fa}.steps{border-top-color:#4b708e}.contact{background:radial-gradient(circle at 80% 30%,#0b4e83,transparent 25%),#031225}.contact h2 i{color:#45caff}.contact-button{background:linear-gradient(135deg,#65d9ff,#0787dc);color:#fff;box-shadow:0 0 45px rgba(31,177,255,.25)}
 @media(max-width:760px){.nav{position:absolute}.hero{padding-top:132px}.hero:after{min-width:360px;min-height:360px;right:-50%;top:11%}.orbit{right:-37vw;top:90px}.hero h1{font-size:clamp(58px,19vw,90px)}}
+
+/* Official Scorpio Analytics logo */
+.logo-crop{position:relative;display:block;width:52px;height:52px;overflow:hidden;border-radius:8px;background:#fff;box-shadow:0 5px 18px rgba(0,112,206,.22);flex:0 0 52px}
+.logo-crop img{position:absolute;width:142px;height:142px;max-width:none;left:-45px;top:-25px;object-fit:contain}
+.footer-logo{background:#fff;box-shadow:none}
+@media(max-width:760px){.logo-crop{width:44px;height:44px;flex-basis:44px}.logo-crop img{width:120px;height:120px;left:-38px;top:-21px}.brand{font-size:12px;gap:9px}}
