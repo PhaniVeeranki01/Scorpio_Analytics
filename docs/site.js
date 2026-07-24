@@ -19,6 +19,6 @@
     if(action==='save')save({essential:true,analytics:analytics.checked,marketing:marketing.checked});
   });
   [settings,privacy].forEach(function(modal){modal.addEventListener('click',function(e){if(e.target===modal)modal.hidden=true})});
-  var phrases=['Observe â†’ Reason â†’ Act','Data â†’ Insight â†’ Action','Signals â†’ Systems â†’ Scale'];var i=0;var agent=document.querySelector('[data-agent-text]');if(agent)setInterval(function(){i=(i+1)%phrases.length;agent.textContent=phrases[i]},2400);
+  var phrases=['Observe → Reason → Act','Data → Insight → Action','Signals → Systems → Scale'];var i=0;var agent=document.querySelector('[data-agent-text]');if(agent)setInterval(function(){i=(i+1)%phrases.length;agent.textContent=phrases[i]},2400);
   var reveals=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12});reveals.forEach(function(el){observer.observe(el)})}else{reveals.forEach(function(el){el.classList.add('is-visible')})}
 })();
