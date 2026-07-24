@@ -1,4 +1,4 @@
-﻿(function(){
+(function(){
   var key='scorpio-cookie-consent';
   var banner=document.getElementById('cookie-banner');
   var settings=document.getElementById('cookie-settings');
@@ -19,8 +19,6 @@
     if(action==='save')save({essential:true,analytics:analytics.checked,marketing:marketing.checked});
   });
   [settings,privacy].forEach(function(modal){modal.addEventListener('click',function(e){if(e.target===modal)modal.hidden=true})});
-  var form=document.getElementById('contractor-form');
-  if(form)form.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(form);var lines=['Contractor inquiry','','Name: '+d.get('name'),'Email: '+d.get('email'),'Phone: '+(d.get('phone')||'Not provided'),'Expertise: '+d.get('expertise'),'Availability: '+d.get('availability'),'Portfolio: '+(d.get('portfolio')||'Not provided'),'','About the work:',''+d.get('message')];window.location.href='mailto:support@scorpioanalytics.com?subject='+encodeURIComponent('Contractor inquiry — '+d.get('name'))+'&body='+encodeURIComponent(lines.join('\n'))});
   var phrases=['Observe → Reason → Act','Data → Insight → Action','Signals → Systems → Scale'];var i=0;var agent=document.querySelector('[data-agent-text]');if(agent)setInterval(function(){i=(i+1)%phrases.length;agent.textContent=phrases[i]},2400);
   var reveals=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12});reveals.forEach(function(el){observer.observe(el)})}else{reveals.forEach(function(el){el.classList.add('is-visible')})}
 })();
