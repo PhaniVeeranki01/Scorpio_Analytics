@@ -1,0 +1,13 @@
+{
+  "name": "Scorpio Analytics",
+  "short_name": "Scorpio Analytics",
+  "description": "Software, SaaS, AI automation, data, digital growth, and commerce solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7fbff",
+  "theme_color": "#087ac8",
+  "icons": [
+    { "src": "/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
